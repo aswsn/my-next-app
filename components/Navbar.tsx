@@ -3,13 +3,9 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-export default function Navbar(
-    { href, children }:
-    { href: string; children: React.ReactNode }
-) {
+export default function Navbar() {
 
     const pathname = usePathname()
-    const isACtive = pathname === href
 
     console.log("Current pathname", pathname)
 
