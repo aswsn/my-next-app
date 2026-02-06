@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Navbar from '@/components/Navbar'
 
 async function getUsers() {
   const res = await fetch('https://jsonplaceholder.typicode.com/users')
@@ -17,7 +16,7 @@ export default async function App() {
       <Image src="/mypic.png" width={400} height={400} alt="My Picture" style={{ width: "30%", height: "auto" }} />
       <h1 className="text-3xl text-pink-300 font-bold">รายชื่อผู้ใช้งาน</h1>
       <ul className="list-disc pl-5">
-        {users.map((user: any) => (
+        {users.map((user: {id: number; name: string; email: string}) => (
           <li key={user.id}>
             {user.name} ({user.email})
           </li>
